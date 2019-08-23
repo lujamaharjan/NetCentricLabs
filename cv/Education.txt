@@ -1,0 +1,6 @@
+<dt>Education</dt>
+            <dd>
+                <h2>Bsc.CSIT from Academia International College (Running)</h2>
+                <p><strong>Major:</strong>Mobile App Development<br />
+                    <strong>Minor:</strong>Web App Development</p>
+            </dd>

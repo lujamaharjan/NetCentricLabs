@@ -1,0 +1,8 @@
+<dt>Skills</dt>
+            <dd>
+                <h2>Technical skills</h2>
+                <p>Python, Javascript and Java</p>
+
+                <h2>Soft skills</h2>
+                <p>Data structures, Design analysis of Alogrithm, mysql, Photoshop</p>
+            </dd>
