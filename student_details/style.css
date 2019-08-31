@@ -1,0 +1,41 @@
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#container{
+    height:400px;
+    width:400px;
+    border:1px solid green;
+    margin:auto;
+    margin-top: 100px;
+    background:skyblue;
+}
+p{
+    font-size:20px;
+    margin-left:20px;
+    margin-top:20px;
+}
+#submit{
+    width:200px;
+    height:40px;
+    font-size:20px;
+    margin-left: 100px;
+    margin-top:80px;
+}
+
+form{
+    height:400;
+    width:400;
+    background:skyblue;
+    margin:auto;
+}
+#name,#address,#phone,#email,#degree,#save{
+    width:300;
+    height:40px;
+    float:right;
+    margin-right: 50px;
+    margin-top:20px;
+}
