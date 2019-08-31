@@ -9,7 +9,7 @@
 
         dim fi,fo
         set fi=Server.CreateObject("Scripting.FileSystemObject")
-        set fo=fi.CreateTextFile("E:\netcentric\student_details\student_details.txt",true) 
+        set fo=fi.CreateTextFile(Server.MapPath("student_details.txt"),true) 
         fo.WriteLine(name)
         fo.WriteLine(address) 
         fo.WriteLine(phone) 

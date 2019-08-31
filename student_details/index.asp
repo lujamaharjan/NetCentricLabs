@@ -14,7 +14,7 @@
         dim i
         i = 0
         set fs = CreateObject("Scripting.FileSystemObject")
-        set fobj = fs.OpenTextFile("E:\netcentric\student_details\student_details.txt",1)
+        set fobj = fs.OpenTextFile(Server.MapPath("student_details.txt"),1)
 
         Do Until fobj.AtEndOfStream
 			detail_array(i) = fobj.ReadLine()
