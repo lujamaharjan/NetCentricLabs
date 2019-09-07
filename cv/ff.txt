@@ -1,0 +1,1 @@
+UPDATE Employee SET Name = 'sachin', Address='bungamati',  Date='1/29/1996 12:00:00 AM', Gender='1' ,Language='', Quailification ='Intermediate' Where EmployeeID = '1'
