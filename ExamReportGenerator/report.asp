@@ -11,11 +11,29 @@
 
 <body>
 
+
+    <%
+    
+        dim id,i
+        dim arr(11)
+        id = Request.Cookies("id")
+        count = 0
+
+        set fs = CreateObject("Scripting.FileSystemObject")
+        set fobj = fs.OpenTextFile(Server.MapPath("student"& id & ".txt"),1)
+        Do Until fobj.AtEndOfStream
+            arr(i) = fobj.Readline()
+            i = i +1
+
+        Loop
+        fobj.close
+    %>
     <div class="wrapper">
-        <h2>Student Report Card</h2>
-        <p><span>Student Name:</span> Sachin Maharjan</p>
-        <p><span>Class Name:</span>Bachelor</p>
-        <p><span>Section:</span>B</p>
+        
+            <h1>Student Report Card</h1>
+        <p><span>Student Name:</span><% Response.Write(arr(1) &" "& arr(2)) %></p>
+        <p><span>Class Name:</span><% Response.Write(arr(3)) %></p>
+        <p><span>Section:</span><% Response.Write(arr(4)) %></p>
 
         <table>
             <thead>
@@ -33,7 +51,7 @@
                     <td>C Programming</td>
                     <td>40</td>
                     <td>100</td>
-                    <td>60</td>
+                    <td><% Response.Write(arr(5)) %></td>
                 </tr>
 
                 <tr>
@@ -41,14 +59,14 @@
                     <td>Computer Networks</td>
                     <td>40</td>
                     <td>100</td>
-                    <td>60</td>
+                    <td><% Response.Write(arr(6)) %></td>
                 </tr>
                 <tr>
                     <td>CSC 253</td>
                     <td>Database</td>
                     <td>40</td>
                     <td>100</td>
-                    <td>60</td>
+                    <td><% Response.Write(arr(7)) %></td>
                 </tr>
 
                 <tr>
@@ -56,7 +74,7 @@
                     <td>System Analysis</td>
                     <td>40</td>
                     <td>100</td>
-                    <td>60</td>
+                    <td><% Response.Write(arr(8)) %></td>
                 </tr>
 
                 <tr>
@@ -64,7 +82,7 @@
                     <td>Data Structure</td>
                     <td>40</td>
                     <td>100</td>
-                    <td>60</td>
+                    <td><% Response.Write(arr(9)) %></td>
                 </tr>
 
             </tbody>
@@ -73,14 +91,28 @@
                     <td colspan="2" class="footer">Total</td>
                     <td>200</td>
                     <td>500</td>
-                    <td>300</td>
+                    <%
+                        dim total
+                        total = Int(arr(5)) + Int(arr(6)) + Int(arr(7)) + Int(arr(8)) + Int(arr(9))
+                     %>
+                    <td><% Response.Write(total) %></td>
                 </tr>
                 <tr>
                     <td colspan="4" class="footer">Percentage</td>
-                    <td>60%</td>
+                    <% dim per 
+                        per = (total / 500) * 100
+                     %>
+                    <td><% Response.write(Per) %></td>
                 </tr>
         </table>
-        <a href="index.asp"> <button>Add Again</button>
+        <h2><%
+            If Int(arr(5)) < 40 OR Int(arr(6)) < 40 OR Int(arr(7)) < 40 OR  Int(arr(8)) < 40 OR  Int(arr(9)) < 40 Then 
+                Response.write("Sorry " & arr(1) &", You Failed")
+            Else 
+                Response.write("Congartulation "& arr(1) &", You passed")
+            End If
+        %></h2>
+        <a href="index.asp"> <button> Add Again</button></a>
     </div>
 
 </body>
